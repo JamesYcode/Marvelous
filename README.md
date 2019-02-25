@@ -30,3 +30,4 @@ Rendering components within a components, When a user clicks on a character the 
 ## Post MVP
 
 - Add comic series.
+- Incorporate videos about the characters
