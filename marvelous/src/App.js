@@ -15,10 +15,11 @@ class App extends Component {
       pageNumber: 0
     }
 
-    this.getData = this.getData.bind(this);
+    this.getData = this.getData.bind(this); /* Might not even need this */
     this.handleClick = this.handleClick.bind(this);
     this.selectPage = this.selectPage.bind(this);
     this.nextPage = this.nextPage.bind(this);
+    this.resetCharacter = this.resetCharacter.bind(this);
   }
 
 
@@ -47,15 +48,19 @@ class App extends Component {
     })
   }
 
-  selectPage(e) {
-    e.preventDefault();
-    const page = parseInt(e.target.value);
-    // debugger;
+  selectPage(page) {
+    this.getData(page);
     this.setState({
       pageNumber: page
     })
   }
 
+
+resetCharacter() {
+  this.setState({
+    characters: null
+  })
+}
 
 
   render() {
@@ -66,11 +71,11 @@ class App extends Component {
           <Route exact path='/' render={Welcome} />
           <Route path='/characterList' render={(props) => (
             <Characters
-              characters={this.state.characters}
+              characters={this.state.characters} /* this is characters list */
               selectPage={this.selectPage}
               nextPage={this.nextPage}
-              getData={this.getData}
-              pageNumber={this.state.pageNumber}/>
+              pageNumber={this.state.pageNumber}
+              resetCharacter={this.resetCharacter}/>
           )} />
         </div>
       </div>
