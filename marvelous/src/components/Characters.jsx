@@ -1,5 +1,7 @@
 import React from 'react';
 import Pages from './Pages';
+import { Link, Route } from 'react-router-dom';
+import CharacterDetails from './CharacterDetails';
 
 function Characters(props) {
   return(
@@ -10,7 +12,13 @@ function Characters(props) {
           {props.characters.map(list => (
             <div key={list.id}>
               <h2>{list.name}</h2>
-              <p>{list.description}</p>
+              <div>
+                <img src={list.thumbnail.path + '/portrait_fantastic.jpg'} />
+              </div>
+              <Link to={`/characterlist/details/${list.id}`}>Detail</Link>
+              <Route path='/characterlist/details/:characterdetail' render={(props) => (
+                <CharacterDetails {...props} character={list} />
+              )} />
             </div>
           ))}
         </div>
@@ -28,6 +36,11 @@ function Characters(props) {
     </div>
   )
 }
+
+{/* Work on previous page loading screen and next page loading screen.
+  Make sure the character page refreshes when from character page to home to characters
+  have previous buttons.
+  */}
 
 
 export default Characters;

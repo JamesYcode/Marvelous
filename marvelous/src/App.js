@@ -85,7 +85,7 @@ handleChange(ev) {
             <Welcome
             handleChange={this.handleChange} />
           )} />
-          <Route path='/characterList' render={(props) => (
+          <Route path='/characterlist' render={(props) => (
             <Characters
               characters={this.state.characters} /* this is characters list */
               selectPage={this.selectPage}
