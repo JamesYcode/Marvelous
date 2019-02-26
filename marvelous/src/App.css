@@ -3,6 +3,17 @@
   color: firebrick;
 }
 
+.characters {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main-character {
+  width: 20%;
+}
+
+
+
 
 .main-nav a {
   padding-left: 20px;

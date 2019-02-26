@@ -8,12 +8,12 @@ function Characters(props) {
     <div>
       {props.characters
         ?
-        <div>
+        <div className='characters'>
           {props.characters.map(list => (
-            <div key={list.id}>
+            <div className='main-character' key={list.id}>
               <h2>{list.name}</h2>
               <div>
-                <img src={list.thumbnail.path + '/portrait_fantastic.jpg'} />
+                <img src={list.thumbnail.path + '/portrait_fantastic.jpg'} alt='Images Not Available' />
               </div>
               <Link to={`/characterlist/details/${list.id}`}>Detail</Link>
               <Route path='/characterlist/details/:characterdetail' render={(props) => (
