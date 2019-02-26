@@ -5,6 +5,7 @@ import fetchData from './services/api';
 import Header from './components/Header';
 import Characters from './components/Characters';
 import Welcome from './components/Welcome';
+import CharacterDetails from './components/CharacterDetails';
 
 class App extends Component {
 
@@ -15,11 +16,11 @@ class App extends Component {
       pageNumber: 0
     }
 
-    this.getData = this.getData.bind(this); /* Might not even need this */
-    this.handleClick = this.handleClick.bind(this);
     this.selectPage = this.selectPage.bind(this);
     this.nextPage = this.nextPage.bind(this);
+    this.prevPage = this.prevPage.bind(this);
     this.resetCharacter = this.resetCharacter.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
 
@@ -34,10 +35,6 @@ class App extends Component {
     })
   }
 
-  handleClick(ev) {
-    ev.preventDefault();
-    this.nextPage();
-  }
 
   nextPage(e) {
     e.preventDefault();
@@ -45,6 +42,15 @@ class App extends Component {
     this.getData(nextPage);
     this.setState({
       pageNumber: nextPage
+    })
+  }
+
+  prevPage(e) {
+    e.preventDefault();
+    const prevPage = this.state.pageNumber - 1;
+    this.getData(prevPage);
+    this.setState({
+      pageNumber: prevPage
     })
   }
 
@@ -62,20 +68,31 @@ resetCharacter() {
   })
 }
 
+handleChange(ev) {
+  const { name , value } = ev.target;
+  this.setState({
+    [name]: value
+  });
+}
+
 
   render() {
     return (
       <div className="App">
         <Header />
         <div>
-          <Route exact path='/' render={Welcome} />
+          <Route exact path='/' render={(props) => (
+            <Welcome
+            handleChange={this.handleChange} />
+          )} />
           <Route path='/characterList' render={(props) => (
             <Characters
               characters={this.state.characters} /* this is characters list */
               selectPage={this.selectPage}
               nextPage={this.nextPage}
+              prevPage={this.prevPage}
               pageNumber={this.state.pageNumber}
-              resetCharacter={this.resetCharacter}/>
+              resetCharacter={this.resetCharacter} />
           )} />
         </div>
       </div>

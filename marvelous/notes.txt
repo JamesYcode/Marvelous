@@ -1,0 +1,9 @@
+handleClick(ev) {
+  ev.preventDefault();
+  this.nextPage();
+}
+
+this.handleClick = this.handleClick.bind(this);
+
+
+this.getData = this.getData.bind(this);

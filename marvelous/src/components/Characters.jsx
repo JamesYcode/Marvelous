@@ -15,11 +15,14 @@ function Characters(props) {
           ))}
         </div>
         :
-        <div>Loading...</div>
+        <div>
+          <h1>Loading...</h1>
+        </div>
       }
       <Pages
         selectPage={props.selectPage}
         nextPage={props.nextPage}
+        prevPage={props.prevPage}
         pageNumber={props.pageNumber}
         resetCharacter={props.resetCharacter}/>
     </div>
