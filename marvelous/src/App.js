@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route, Link } from "react-router-dom";
-import fetchData from './services/api';
+import { fetchData, fetchName } from './services/api';
 import Header from './components/Header';
 import Characters from './components/Characters';
 import Welcome from './components/Welcome';
@@ -13,7 +13,9 @@ class App extends Component {
     super();
     this.state = {
       characters: [],
-      pageNumber: 0
+      pageNumber: 0,
+      name: [],
+      userInput: ''
     }
 
     this.selectPage = this.selectPage.bind(this);
@@ -35,10 +37,15 @@ class App extends Component {
     })
   }
 
+  async getName() {
+    const names = await fetchName(this.state.userInput);
+    this.setState({
+      name: names
+    })
+  }
 
-  nextPage(e) {
-    e.preventDefault();
-    const nextPage = this.state.pageNumber + 1;
+
+  nextPage(nextPage) {
     this.getData(nextPage);
     this.setState({
       pageNumber: nextPage
@@ -79,7 +86,7 @@ handleChange(ev) {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header nextPage={this.nextPage}/>
         <div>
           <Route exact path='/' render={(props) => (
             <Welcome

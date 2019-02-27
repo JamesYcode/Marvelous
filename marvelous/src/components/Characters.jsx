@@ -15,7 +15,9 @@ function Characters(props) {
               <div>
                 <img src={list.thumbnail.path + '/portrait_fantastic.jpg'} alt='Images Not Available' />
               </div>
-              <Link to={`/characterlist/details/${list.id}`}>Detail</Link>
+              <div className='character-detail-links'>
+                <Link to={`/characterlist/details/${list.id}`}>Detail</Link>
+              </div>
               <Route path='/characterlist/details/:characterdetail' render={(props) => (
                 <CharacterDetails {...props} character={list} />
               )} />
