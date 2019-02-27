@@ -7,3 +7,16 @@ this.handleClick = this.handleClick.bind(this);
 
 
 this.getData = this.getData.bind(this);
+
+
+------------------------------------------------------------------------------
+
+
+Have search single character name into different component. Have it render.
+Fix the previous button from NaN to a number.
+Have previous button after incrementing pages.
+Find another solution to have characters list refresh when going from characters to home to characters.
+Loading Screen should render gif images
+
+Have a conditional rendering statements to allow characters to only render when there is a description and a image. If there is information about the characters such as comics and other attributes; (Don't do this step.)
+CLEAN UP CODE SUCH AS PAGE COMPONENTS. THE FUNCTIONS SHOULD BE REFACTORED.

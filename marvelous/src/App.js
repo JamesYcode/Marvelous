@@ -47,12 +47,13 @@ class App extends Component {
     })
   }
 
-  prevPage(prevPage) {
-    this.getData(prevPage);
-    this.setState({
-      pageNumber: prevPage
-    })
-  }
+  prevPage(e) {
+  const prevPage = this.state.pageNumber - 1;
+  this.getData(prevPage);
+  this.setState({
+    pageNumber: prevPage
+  })
+}
 
   selectPage(page) {
     this.getData(page);
@@ -91,12 +92,14 @@ async handleSubmit(ev) {
       <div className="App">
         <Header nextPage={this.nextPage}/>
         <div>
-          <Route exact path='/' render={(props) => (
-            <Welcome
-            handleChange={this.handleChange}
-            handleSubmit={this.handleSubmit}
-            test={this.state.name} />
-          )} />
+          <div id='test'>
+            <Route exact path='/' render={(props) => (
+              <Welcome
+              handleChange={this.handleChange}
+              handleSubmit={this.handleSubmit}
+              characterName={this.state.name} />
+            )} />
+          </div>
           <Route path='/characterlist' render={(props) => (
             <Characters
               characters={this.state.characters} /* this is characters list */
@@ -107,7 +110,7 @@ async handleSubmit(ev) {
               resetCharacter={this.resetCharacter} />
           )} />
         </div>
-        <Details test={this.state.name} />
+
       </div>
     );
   }

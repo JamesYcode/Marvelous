@@ -12,7 +12,7 @@ function Welcome(props) {
         <input type='text' placeholder='Type Characters Here' value={props.name} name='userInput' onChange={props.handleChange}/>
         <button id='main-button'>Enter</button>
       </form>
-      {props.test.map(any => (
+      {props.characterName.map(any => (
         <div key={any.id}>
           <h1>{any.name}</h1>
           <img src={any.thumbnail.path + '/standard_fantastic.jpg'} alt='Images Not Available' />

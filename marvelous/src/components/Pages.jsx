@@ -9,11 +9,11 @@ function Pages(props){
           &&
           <button onClick={(e) => {
             e.preventDefault();
-            const prevPage = parseInt(e.target.value);
             props.resetCharacter();
-            props.prevPage(prevPage);
-          }} value={props.prevPage - 1}>Previous</button>
+            props.prevPage();
+          }}>Previous</button>
         }
+
         <button onClick={(e) => {
           e.preventDefault();
           const page = parseInt(e.target.value);
