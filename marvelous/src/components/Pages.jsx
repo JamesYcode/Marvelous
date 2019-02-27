@@ -7,7 +7,12 @@ function Pages(props){
         {
           props.pageNumber > 0
           &&
-          <button onClick={props.prevPage}>Previous</button>
+          <button onClick={(e) => {
+            e.preventDefault();
+            const prevPage = parseInt(e.target.value);
+            props.resetCharacter();
+            props.prevPage(prevPage);
+          }} value={props.prevPage - 1}>Previous</button>
         }
         <button onClick={(e) => {
           e.preventDefault();
@@ -54,7 +59,7 @@ function Pages(props){
 
         {/*Do this repeating code for now and clean up (Functions) after your finish with other things such as inputs and detail components
           -- have the previous numbers after incrementing.
-          -- characters should refresh when going from characters to other  page to characters.
+          -- characters should refresh when going from characters to other  page to characters. (Got the solution but find another way)
 
            */}
 

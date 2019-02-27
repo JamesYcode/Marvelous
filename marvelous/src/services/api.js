@@ -17,7 +17,6 @@ async function fetchData(currentPage) {
 
 async function fetchName(name) {
   const dataName = await axios(`${Url}characters?name=${name}&ts=1&apikey=${apiKey}&hash=${hash}`);
-  console.log(dataName.data.data.results);
   return dataName.data.data.results;
 }
 

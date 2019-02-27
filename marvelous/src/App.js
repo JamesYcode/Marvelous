@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Characters from './components/Characters';
 import Welcome from './components/Welcome';
 import CharacterDetails from './components/CharacterDetails';
+import Details from './components/Details';
 
 class App extends Component {
 
@@ -14,8 +15,8 @@ class App extends Component {
     this.state = {
       characters: [],
       pageNumber: 0,
-      name: [],
-      userInput: ''
+      userInput: '',
+      name: []
     }
 
     this.selectPage = this.selectPage.bind(this);
@@ -23,6 +24,7 @@ class App extends Component {
     this.prevPage = this.prevPage.bind(this);
     this.resetCharacter = this.resetCharacter.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
 
@@ -37,13 +39,6 @@ class App extends Component {
     })
   }
 
-  async getName() {
-    const names = await fetchName(this.state.userInput);
-    this.setState({
-      name: names
-    })
-  }
-
 
   nextPage(nextPage) {
     this.getData(nextPage);
@@ -52,9 +47,7 @@ class App extends Component {
     })
   }
 
-  prevPage(e) {
-    e.preventDefault();
-    const prevPage = this.state.pageNumber - 1;
+  prevPage(prevPage) {
     this.getData(prevPage);
     this.setState({
       pageNumber: prevPage
@@ -82,6 +75,16 @@ handleChange(ev) {
   });
 }
 
+async handleSubmit(ev) {
+ ev.preventDefault();
+ const singleName = this.state.userInput;
+ const names = await fetchName(singleName);
+ console.log(names);
+ this.setState({
+   name: names
+ })
+}
+
 
   render() {
     return (
@@ -90,7 +93,9 @@ handleChange(ev) {
         <div>
           <Route exact path='/' render={(props) => (
             <Welcome
-            handleChange={this.handleChange} />
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+            test={this.state.name} />
           )} />
           <Route path='/characterlist' render={(props) => (
             <Characters
@@ -102,6 +107,7 @@ handleChange(ev) {
               resetCharacter={this.resetCharacter} />
           )} />
         </div>
+        <Details test={this.state.name} />
       </div>
     );
   }
