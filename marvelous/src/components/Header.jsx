@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
-import Welcome from './Welcome';
+
 
 function Header(props) {
   return(
-    <div id='main-nav-form-container'>
+    <div className='main-nav-form-container'>
       <header className='main-header'>
-        <img id='logo' src='https://66.media.tumblr.com/3b2b790a7fa5601c643871e57ad3851b/tumblr_p5abebOejb1u9mjoso1_400.gif' alt='test' />
+        <div id='main-logo'>
+          <img id='logo' src='https://66.media.tumblr.com/3b2b790a7fa5601c643871e57ad3851b/tumblr_p5abebOejb1u9mjoso1_400.gif' alt='test' />
+        </div>
         <h1>Marvelous Database</h1>
         <nav className='main-nav'>
           <Link to='/'>Home</Link>

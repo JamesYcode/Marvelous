@@ -6,6 +6,8 @@ import CharacterDetails from './CharacterDetails';
 function Characters(props) {
   return(
     <div>
+    <div>
+    </div>
       {props.characters
         ?
         <div className='characters'>

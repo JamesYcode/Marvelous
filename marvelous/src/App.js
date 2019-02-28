@@ -6,7 +6,7 @@ import Header from './components/Header';
 import Characters from './components/Characters';
 import Welcome from './components/Welcome';
 import CharacterDetails from './components/CharacterDetails';
-import Details from './components/Details';
+import Footer from './components/Footer';
 
 class App extends Component {
 
@@ -93,8 +93,7 @@ async handleSubmit(ev) {
         <Header nextPage={this.nextPage}
         handleChange={this.handleChange}
         handleSubmit={this.handleSubmit} />
-
-        <div>
+        <div className='main-welcome'>
           <div>
             <Route exact path='/' render={(props) => (
               <Welcome
@@ -112,9 +111,9 @@ async handleSubmit(ev) {
               resetCharacter={this.resetCharacter} />
           )} />
         </div>
-
+        <Footer/>
       </div>
-    );
+    )
   }
 }
 

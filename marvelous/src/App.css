@@ -9,14 +9,35 @@ body {
   letter-spacing: 1px;
 }
 
+
+
 p {
   font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: firebrick;
+}
+
+a:hover {
+  color: 	#8B0000;
+}
+
+input:focus {
+  outline: none;
 }
 
 
 .App {
   text-align: center;
   color: firebrick;
+  display: flex;
+  flex-direction: column;
+
 }
 
 .characters {
@@ -29,10 +50,6 @@ p {
   width: 20%;
 }
 
-a {
-  text-decoration: none;
-}
-
 .character-detail-links {
   padding-top: 20px;
 }
@@ -40,6 +57,7 @@ a {
 
 .main-nav a {
   padding-left: 20px;
+  font-size: 20px;
 }
 
 .main-nav {
@@ -47,8 +65,7 @@ a {
 }
 
 
-
-.main-form {
+.pages {
   margin-top: 20px;
   background: firebrick;
   border: 1px solid;
@@ -58,28 +75,29 @@ a {
   align-items: center;
 }
 
-.main-form button {
+.pages button {
   padding: 10px;
   font-size: 20px;
   margin-left: 5px;
 }
 
-/* .main-welcome {
-  background-image: linear-gradient(rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.2) 100%),url("./images/background.jpg");
-  background-repeat: no-repeat;
-  background-position: bottom;
-  height: 1000px;
-} */
 
 .main-header {
   background: rgba(0, 0, 0, 0.2);
-  height: 80px;
+  height: 105px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.main-welcome {
+  margin-top: 20px;
+}
+
+.single-character {
+  margin: 90px auto;
+}
 
 
 
@@ -89,10 +107,6 @@ a {
   text-align: center;
 }
 
-input:focus {
-  outline: none;
-}
-
 
 #main-button {
   width: 60px;
@@ -100,8 +114,58 @@ input:focus {
   margin-left: 5px;
 }
 
+
 #logo {
   height: 100%;
   width: 200px;
   margin-right: 0;
+  border-radius: 8px;
+}
+
+#footer-list ul {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 400px;
+  margin-left: 400px;
+  margin-top: 30px;
+}
+
+#footer-list li{
+  list-style-type: none;
+}
+
+
+
+/* STICKY FOOTER SOLUTION */
+
+#root > div {
+  min-height: 100vh;      /*Got this solution from eric*/
+}
+
+.main-welcome {
+  flex-grow: 35;
+  background-image: url('./images/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-footer {
+  flex-grow: 2;
+  height: 200px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
+  padding-top: 15px;
+}
+
+
+
+
+
+/* -------------------------------------------------------------------------- */
+
+@media screen and (max-width: 500px){
+  body {
+    background: red;
+  }
+
 }

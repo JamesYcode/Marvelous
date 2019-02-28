@@ -2,7 +2,7 @@ import React from 'react';
 
 function Pages(props){
   return(
-    <div className='main-form'>
+    <div className='pages'>
       <form>
         {
           props.pageNumber > 0
@@ -14,14 +14,25 @@ function Pages(props){
           }}>Previous</button>
         }
 
-        <button onClick={(e) => {
+        {
+          props.pageNumber > 0
+          &&
+          <button onClick={(e) => {
+          e.preventDefault();
+          props.resetCharacter();
+          props.prevPage();
+        }}>{props.pageNumber}</button>
+        }
+
+
+        <button className='page-button' onClick={(e) => {
           e.preventDefault();
           const page = parseInt(e.target.value);
           props.resetCharacter();
           props.selectPage(page);
         }} value={props.pageNumber}>{props.pageNumber + 1}</button>
 
-        <button onClick={(e) => {
+        <button className='page-button' onClick={(e) => {
           e.preventDefault();
           const page = parseInt(e.target.value);
           props.resetCharacter();
