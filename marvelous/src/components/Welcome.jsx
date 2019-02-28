@@ -8,15 +8,12 @@ function Welcome(props) {
       <h2>Marvel Characters</h2>
       <p>Marvelous is a friendly search engine for Marvels Characters</p>
       <p>Search Your favorite character and see their Origins, Powers and abilities, and more!</p>
-      <form onSubmit={props.handleSubmit}>
-        <input type='text' placeholder='Type Characters Here' value={props.name} name='userInput' onChange={props.handleChange}/>
-        <button id='main-button'>Enter</button>
-      </form>
-      {props.characterName.map(any => (
-        <div key={any.id}>
-          <h1>{any.name}</h1>
-          <img src={any.thumbnail.path + '/standard_fantastic.jpg'} alt='Images Not Available' />
-          <p>{any.description}</p>
+      {props.characterName.map(info => (
+        <div key={info.id}>
+          <h1>{info.name}</h1>
+          <img src={info.thumbnail.path + '/standard_fantastic.jpg'} alt='Images Not Available' />
+          <p>{info.description}</p>
+          <p>Comics Available: {info.comics.available}</p>
         </div>
       ))}
     </div>

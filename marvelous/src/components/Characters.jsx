@@ -26,7 +26,7 @@ function Characters(props) {
         </div>
         :
         <div>
-          <h1>Loading...</h1>
+          <img src='http://www.satishsugars.com/wp-content/uploads/2018/11/mgt.gif' alt='Not Available' />
         </div>
       }
       <Pages

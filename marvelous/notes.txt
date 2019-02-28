@@ -20,3 +20,6 @@ Loading Screen should render gif images
 
 Have a conditional rendering statements to allow characters to only render when there is a description and a image. If there is information about the characters such as comics and other attributes; (Don't do this step.)
 CLEAN UP CODE SUCH AS PAGE COMPONENTS. THE FUNCTIONS SHOULD BE REFACTORED.
+
+
+https://lowbrowcomics.files.wordpress.com/2015/05/01-klqa0to.gif Loading screen <<<

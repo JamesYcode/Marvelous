@@ -90,16 +90,18 @@ async handleSubmit(ev) {
   render() {
     return (
       <div className="App">
-        <Header nextPage={this.nextPage}/>
+        <Header nextPage={this.nextPage}
+        handleChange={this.handleChange}
+        handleSubmit={this.handleSubmit} />
+
         <div>
-          <div id='test'>
+          <div>
             <Route exact path='/' render={(props) => (
               <Welcome
-              handleChange={this.handleChange}
-              handleSubmit={this.handleSubmit}
               characterName={this.state.name} />
             )} />
           </div>
+
           <Route path='/characterlist' render={(props) => (
             <Characters
               characters={this.state.characters} /* this is characters list */

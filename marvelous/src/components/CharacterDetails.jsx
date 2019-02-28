@@ -9,6 +9,7 @@ function CharacterDetails(props) {
       {parseInt(props.match.params.characterdetail) === props.character.id && (
         <div>
           <p>{props.character.description}</p>
+          <p>Comics available: {props.character.comics.available}</p>
         </div>
       )}
     </div>

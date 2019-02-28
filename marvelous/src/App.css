@@ -1,7 +1,18 @@
 html,
 body {
   height: 100%;
+  width: 100%;
 }
+
+body {
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1px;
+}
+
+p {
+  font-size: 20px;
+}
+
 
 .App {
   text-align: center;
@@ -11,6 +22,7 @@ body {
 .characters {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 50px;
 }
 
 .main-character {
@@ -30,9 +42,11 @@ a {
   padding-left: 20px;
 }
 
-.main-header h1 {
-  margin-top: 0;
+.main-nav {
+  margin-right: 40px;
 }
+
+
 
 .main-form {
   margin-top: 20px;
@@ -42,7 +56,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .main-form button {
@@ -60,5 +73,35 @@ a {
 
 .main-header {
   background: rgba(0, 0, 0, 0.2);
-  height: 200px;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+#main-input {
+  height: 25px;
+  font-size: 20px;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+}
+
+
+#main-button {
+  width: 60px;
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+#logo {
+  height: 100%;
+  width: 200px;
+  margin-right: 0;
 }
