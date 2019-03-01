@@ -3,68 +3,51 @@ body {
   height: 100%;
   width: 100%;
 }
-
 body {
   font-family: 'Bangers', cursive;
   letter-spacing: 1px;
 }
-
-
-
 p {
   font-size: 20px;
 }
-
 a {
   text-decoration: none;
+  color: white;
 }
-
 a:visited {
   color: firebrick;
 }
-
 a:hover {
-  color: 	#8B0000;
+  color:    #8B0000;
 }
-
 input:focus {
   outline: none;
 }
-
-
 .App {
   text-align: center;
   color: firebrick;
   display: flex;
   flex-direction: column;
-
 }
-
 .characters {
   display: flex;
   flex-wrap: wrap;
   margin-top: 50px;
 }
-
 .main-character {
   width: 20%;
 }
-
 .character-detail-links {
   padding-top: 20px;
 }
-
-
 .main-nav a {
   padding-left: 20px;
   font-size: 20px;
+  color: #fff;
 }
-
 .main-nav {
   margin-right: 40px;
 }
-
-
 .pages {
   margin-top: 20px;
   background: firebrick;
@@ -74,54 +57,44 @@ input:focus {
   justify-content: center;
   align-items: center;
 }
-
 .pages button {
   padding: 10px;
   font-size: 20px;
   margin-left: 5px;
 }
-
-
 .main-header {
-  background: rgba(0, 0, 0, 0.2);
+  background-color: #000033;
   height: 105px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  color: #fff;
 }
-
-.main-welcome {
-  margin-top: 20px;
-}
-
 .single-character {
-  margin: 90px auto;
+  margin: 0 auto;
+  width: 60%;
+  line-height: 1.5;
 }
-
-
-
+.single-character h1 {
+  font-size: 50px;
+}
 #main-input {
   height: 25px;
   font-size: 20px;
   text-align: center;
 }
-
-
 #main-button {
   width: 60px;
   font-size: 20px;
   margin-left: 5px;
 }
-
-
 #logo {
   height: 100%;
   width: 200px;
   margin-right: 0;
   border-radius: 8px;
 }
-
 #footer-list ul {
   display: flex;
   justify-content: space-around;
@@ -129,43 +102,43 @@ input:focus {
   margin-left: 400px;
   margin-top: 30px;
 }
-
 #footer-list li{
   list-style-type: none;
 }
-
-
-
 /* STICKY FOOTER SOLUTION */
-
 #root > div {
   min-height: 100vh;      /*Got this solution from eric*/
 }
-
-.main-welcome {
+.main-background {
   flex-grow: 35;
-  background-image: url('./images/background.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
 }
-
+.main-welcome {
+  background-image: url('https://cdn.allwallpaper.in/wallpapers/1920x1080/6733/comics-spider-man-marvel-1920x1080-wallpaper.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-welcome h2 {
+  margin-top: 0;
+  margin-right: 2.5%;
+  font-size: 30px;
+  transform: rotate(30deg);
+  text-shadow: 1px 2px #ff0000; 
+}
 .main-footer {
   flex-grow: 2;
-  height: 200px;
-  background: rgba(0, 0, 0, 0.2);
+  height: 125px;
+  background: #000033;
   border-radius: 7px;
-  padding-top: 15px;
+  padding-bottom: 10px;
 }
-
-
-
-
-
 /* -------------------------------------------------------------------------- */
-
 @media screen and (max-width: 500px){
   body {
     background: red;
   }
-
 }

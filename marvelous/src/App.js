@@ -7,6 +7,7 @@ import Characters from './components/Characters';
 import Welcome from './components/Welcome';
 import CharacterDetails from './components/CharacterDetails';
 import Footer from './components/Footer';
+import SingleCharacter from './components/SingleCharacter';
 
 class App extends Component {
 
@@ -76,8 +77,7 @@ handleChange(ev) {
   });
 }
 
-async handleSubmit(ev) {
- ev.preventDefault();
+async handleSubmit() {
  const singleName = this.state.userInput;
  const names = await fetchName(singleName);
  console.log(names);
@@ -93,11 +93,13 @@ async handleSubmit(ev) {
         <Header nextPage={this.nextPage}
         handleChange={this.handleChange}
         handleSubmit={this.handleSubmit} />
-        <div className='main-welcome'>
+        <div className='main-background'>
           <div>
             <Route exact path='/' render={(props) => (
-              <Welcome
-              characterName={this.state.name} />
+              <Welcome/>
+            )} />
+            <Route path='/character' render={(props) => (
+              <SingleCharacter characterName={this.state.name} />
             )} />
           </div>
 

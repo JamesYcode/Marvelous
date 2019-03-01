@@ -5,8 +5,7 @@ function Footer() {
   return(
     <div className='main-footer'>
       <footer>
-        <h1>MARVELOUS</h1>
-        <h2>EXPLORE MARVEL UNIVERSE</h2>
+        <h3>EXPLORE MARVEL UNIVERSE</h3>
         <div id='footer-list'>
           <ul>
             <li><a href='https://www.marvel.com/games' target='_blank'>GAMES</a></li>
