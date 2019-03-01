@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const Url = 'http://gateway.marvel.com/v1/public/'
 const hash = '942020c4320bb1d2fc09c16f831d6c46'
-const apiKey = '0c193b53ee7c133d94c0c361379d7627'
+const apiKey = process.env.REACT_APP_API_KEY;
 
 // const UrlTwo = 'https://gateway.marvel.com:443/v1/public/characters?';
 

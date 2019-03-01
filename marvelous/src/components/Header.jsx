@@ -42,13 +42,4 @@ class Header extends Component {
   )}
 }
 
-{/*onClick={() => {
-  props.nextPage(0);
-}}
-
-the code above allows the app to reset the characters to default.
-It calls the api again.
-*/}
-
-
 export default withRouter(Header);
