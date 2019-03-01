@@ -98,9 +98,11 @@ async handleSubmit() {
             <Route exact path='/' render={(props) => (
               <Welcome/>
             )} />
+            <div className='character-page'>
             <Route path='/character' render={(props) => (
               <SingleCharacter characterName={this.state.name} />
             )} />
+            </div>
           </div>
 
           <Route path='/characterlist' render={(props) => (

@@ -21,16 +21,15 @@ class Header extends Component {
         <div id='main-logo'>
           <img id='logo' src='https://66.media.tumblr.com/3b2b790a7fa5601c643871e57ad3851b/tumblr_p5abebOejb1u9mjoso1_400.gif' alt='test' />
         </div>
-        
+
         <div>
           <h1>Marvelous Database</h1>
-          <small>Search Your favorite character's origins, powers and abilities, and more!</small>
+          <small id='small-text'>Search Your favorite character's origins, powers and abilities, and more!</small>
         </div>
 
         <nav className='main-nav'>
           <Link to='/'>Home</Link>
           <Link to='/characterList'>Characters</Link>
-          <Link to='/about'>About</Link>
         </nav>
         <div>
           <form onSubmit={this.submitForm}>
